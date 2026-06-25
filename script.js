@@ -43,10 +43,11 @@ function updateCountdown() {
 
   let diff = targetKickoff - new Date();
 
-  if (diff <= 0) {
-    countdown.textContent = "AFTRAP!";
+if (diff <= 0) {
+    countdown.innerHTML = "NU LIVE!";
+    countdown.style.fontSize = "150px";
     return;
-  }
+}
 
   const hours = Math.floor(diff / 1000 / 60 / 60);
   const minutes = Math.floor((diff / 1000 / 60) % 60);
