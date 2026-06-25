@@ -34,3 +34,29 @@ setInterval(() => {
     });
 
 }, 60000);
+
+const targetKickoff = new Date("2026-06-26T01:00:00+02:00");
+
+function updateCountdown() {
+  const countdown = document.getElementById("countdown");
+  if (!countdown) return;
+
+  let diff = targetKickoff - new Date();
+
+  if (diff <= 0) {
+    countdown.textContent = "AFTRAP!";
+    return;
+  }
+
+  const hours = Math.floor(diff / 1000 / 60 / 60);
+  const minutes = Math.floor((diff / 1000 / 60) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  countdown.textContent =
+    String(hours).padStart(2, "0") + ":" +
+    String(minutes).padStart(2, "0") + ":" +
+    String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
