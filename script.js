@@ -35,7 +35,9 @@ setInterval(() => {
 
 }, 60000);
 
-const targetKickoff = new Date("2026-06-26T01:00:00+02:00");
+// Voetbal countdown //
+
+const targetKickoff = new Date("2026-07-04T19:00:00+02:00");
 
 function updateCountdown() {
   const countdown = document.getElementById("countdown");
